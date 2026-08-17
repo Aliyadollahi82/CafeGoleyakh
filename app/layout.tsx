@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Vazirmatn } from "next/font/google";
 import "./globals.css";
+import Snow from "./components/Snow";
 
 const vazir = Vazirmatn({
   subsets: ["arabic"],
@@ -25,10 +26,9 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         />
       </head>
-      <body
-        className={`${vazir.className} bg-[#f7fbff] text-[#0f172a] antialiased selection:bg-[#4fc3f7] selection:text-white`}
-      >
+      <body className={vazir.className}>
         {children}
+        <Snow />
       </body>
     </html>
   );

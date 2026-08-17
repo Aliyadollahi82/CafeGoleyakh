@@ -12,6 +12,7 @@ import SpecialOffer from "./components/SpecialOffer";
 import OrderModal from "./components/OrderModal";
 import Footer from "./components/Footer";
 import BackToTop from "./components/BackToTop";
+import RevealOnScroll from "./components/RevealOnScroll";
 
 export default function Home() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
@@ -32,6 +33,8 @@ export default function Home() {
     if (target) target.scrollIntoView({ behavior: "smooth" });
   };
 
+  const revealKey = filteredProducts.map((p) => p.id).join("-");
+
   return (
     <main>
       <WelcomeScreen onEnter={handleWelcomeEnter} />
@@ -47,25 +50,19 @@ export default function Home() {
         setActiveCategory={setActiveCategory}
       />
 
-      {/* Products Section */}
-      <section id="products" className="py-20">
-        <div className="mx-auto max-w-[1200px] px-4">
-          <div className="mb-14 text-center">
-            <h2 className="text-3xl font-bold sm:text-4xl">منوی کافه</h2>
-            <p className="mt-3 text-lg text-gray-500">
-              خوشمزه‌ترین انتخاب‌ها منتظر شماست
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {filteredProducts.map((product: Product) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                onOrder={(prod: Product) => setSelectedProduct(prod)}
-              />
-            ))}
-          </div>
+      <section className="products-section" id="products">
+        <div className="section-title">
+          <h2>منوی کافه</h2>
+          <p>خوشمزه‌ترین انتخاب‌ها منتظر شماست</p>
+        </div>
+        <div className="products-grid">
+          {filteredProducts.map((product: Product) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onOrder={(prod: Product) => setSelectedProduct(prod)}
+            />
+          ))}
         </div>
       </section>
 
@@ -74,6 +71,7 @@ export default function Home() {
       />
       <Footer />
       <BackToTop />
+      <RevealOnScroll key={revealKey} />
 
       <OrderModal
         product={selectedProduct}
