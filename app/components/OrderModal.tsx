@@ -43,17 +43,40 @@ export default function OrderModal({ product, onClose }: OrderModalProps) {
     e.currentTarget.src = "/images/no-image.png";
   };
 
+  const inputClasses =
+    "p-3.5 border border-[#dbeafe] rounded-xl font-[inherit] text-[15px] outline-none focus:border-primary";
+
   return (
-    <div className="modal active" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <span className="close-modal" onClick={onClose}>
+    <div
+      className="fixed inset-0 bg-[rgba(0,0,0,0.65)] flex justify-center items-center z-[99999] p-5 overflow-y-auto"
+      onClick={onClose}
+    >
+      <div
+        className="bg-white w-full max-w-[520px] max-h-[90vh] overflow-y-auto rounded-[20px] p-[30px] relative animate-[popup_0.35s]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <span
+          className="absolute top-[15px] left-5 text-[32px] cursor-pointer"
+          onClick={onClose}
+        >
           ×
         </span>
-        <img src={product.image} alt={product.name} onError={handleImageError} />
-        <h2>{product.name}</h2>
+        <img
+          src={product.image}
+          alt={product.name}
+          onError={handleImageError}
+          className="w-full h-[240px] object-cover rounded-[15px] mb-5"
+        />
+        <h2 className="mb-2.5">{product.name}</h2>
         <p>{product.description}</p>
-        <div className="modal-price">{product.price}</div>
-        <form id="orderForm" onSubmit={handleSubmit}>
+        <div className="text-[26px] font-bold text-primary my-3.5">
+          {product.price}
+        </div>
+        <form
+          id="orderForm"
+          className="flex flex-col gap-[15px] mt-5"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
             id="customerName"
@@ -61,6 +84,7 @@ export default function OrderModal({ product, onClose }: OrderModalProps) {
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            className={inputClasses}
           />
           <input
             type="tel"
@@ -71,6 +95,7 @@ export default function OrderModal({ product, onClose }: OrderModalProps) {
             onChange={(e) =>
               setFormData({ ...formData, phone: e.target.value })
             }
+            className={inputClasses}
           />
           <select
             id="tableNumber"
@@ -79,6 +104,7 @@ export default function OrderModal({ product, onClose }: OrderModalProps) {
             onChange={(e) =>
               setFormData({ ...formData, table: e.target.value })
             }
+            className={inputClasses}
           >
             <option value="">شماره میز را انتخاب کنید</option>
             {[...Array(10)].map((_, i) => (
@@ -92,8 +118,12 @@ export default function OrderModal({ product, onClose }: OrderModalProps) {
             placeholder="توضیحات سفارش (اختیاری)"
             value={formData.note}
             onChange={(e) => setFormData({ ...formData, note: e.target.value })}
+            className={`${inputClasses} resize-y min-h-[100px]`}
           />
-          <button type="submit" className="submit-order">
+          <button
+            type="submit"
+            className="p-3.5 bg-primary text-white rounded-xl text-[17px] transition-all duration-300 hover:bg-primary-hover"
+          >
             ثبت سفارش
           </button>
         </form>

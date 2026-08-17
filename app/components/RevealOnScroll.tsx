@@ -6,13 +6,13 @@ export default function RevealOnScroll() {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    const cards = document.querySelectorAll(".product-card");
+    const cards = document.querySelectorAll("[data-reveal]");
 
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            entry.target.setAttribute("data-show", "");
             observerRef.current?.unobserve(entry.target);
           }
         });

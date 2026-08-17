@@ -50,12 +50,14 @@ export default function Home() {
         setActiveCategory={setActiveCategory}
       />
 
-      <section className="products-section" id="products">
-        <div className="section-title">
-          <h2>منوی کافه</h2>
-          <p>خوشمزه‌ترین انتخاب‌ها منتظر شماست</p>
+      <section className="py-[80px]" id="products">
+        <div className="text-center mb-[55px]">
+          <h2 className="text-[42px] mb-3 max-[600px]:text-[32px]">
+            منوی کافه
+          </h2>
+          <p className="text-gray text-lg">خوشمزه‌ترین انتخاب‌ها منتظر شماست</p>
         </div>
-        <div className="products-grid">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[30px] max-[900px]:grid-cols-1">
           {filteredProducts.map((product: Product) => (
             <ProductCard
               key={product.id}

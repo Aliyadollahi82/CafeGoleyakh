@@ -16,7 +16,9 @@ export default function BackToTop() {
   return (
     <button
       id="topBtn"
-      className={show ? "show" : ""}
+      className={`fixed bottom-[25px] left-[25px] w-[50px] h-[50px] rounded-full bg-primary text-white justify-center items-center text-xl shadow-[var(--color-card-shadow)] z-[999] transition-all duration-300 hover:-translate-y-[5px] ${
+        show ? "flex" : "hidden"
+      }`}
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       title="بازگشت به بالا"
     >
