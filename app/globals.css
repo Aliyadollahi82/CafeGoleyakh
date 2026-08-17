@@ -40,6 +40,18 @@ img {
   }
 }
 
+.snow {
+  position: fixed;
+  top: -20px;
+  color: #9be7ff;
+  text-shadow: 0 0 8px rgba(155, 231, 255, 0.9);
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+  animation: snowFall linear forwards;
+  opacity: 0.9;
+}
+
 @keyframes snowFall {
   to {
     transform: translateY(110vh);
