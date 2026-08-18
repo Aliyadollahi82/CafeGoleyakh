@@ -7,7 +7,7 @@ export const productsData: Product[] = [
     category: "icecream",
     price: "۷۵,۰۰۰ تومان",
     description: "بستنی وانیلی تهیه شده از شیر تازه و وانیل طبیعی.",
-    image: "/images/vanilla.png",
+    image: "/images/vanilla.webp",
     badge: "پرفروش",
   },
   {
@@ -16,7 +16,7 @@ export const productsData: Product[] = [
     category: "icecream",
     price: "۸۵,۰۰۰ تومان",
     description: "بستنی شکلات تلخ با سس شکلات مخصوص.",
-    image: "/images/chocolate.png",
+    image: "/images/chocolate.webp",
     badge: "جدید",
   },
   {
@@ -25,7 +25,7 @@ export const productsData: Product[] = [
     category: "icecream",
     price: "۸۰,۰۰۰ تومان",
     description: "بستنی توت فرنگی با میوه تازه.",
-    image: "/images/strawberry.png",
+    image: "/images/strawberry.webp",
     badge: "ویژه",
   },
   {
@@ -34,7 +34,7 @@ export const productsData: Product[] = [
     category: "shake",
     price: "۱۲۰,۰۰۰ تومان",
     description: "میلک شیک شکلات با خامه فرم گرفته.",
-    image: "/images/shake1.png",
+    image: "/images/shake1.webp",
     badge: "پیشنهاد",
   },
   {
@@ -43,7 +43,7 @@ export const productsData: Product[] = [
     category: "shake",
     price: "۱۱۵,۰۰۰ تومان",
     description: "میلک شیک وانیلی با بستنی دست ساز.",
-    image: "/images/shake2.png",
+    image: "/images/shake2.webp",
     badge: "محبوب",
   },
   {
@@ -52,7 +52,7 @@ export const productsData: Product[] = [
     category: "cake",
     price: "۹۵,۰۰۰ تومان",
     description: "چیزکیک تازه با سس توت فرنگی.",
-    image: "/images/cake1.png",
+    image: "/images/cake1.webp",
     badge: "تازه",
   },
   {
@@ -61,7 +61,7 @@ export const productsData: Product[] = [
     category: "cake",
     price: "۹۰,۰۰۰ تومان",
     description: "براونی شکلات همراه بستنی وانیلی.",
-    image: "/images/brownie.png",
+    image: "/images/brownie.webp",
     badge: "داغ",
   },
   {
@@ -70,7 +70,7 @@ export const productsData: Product[] = [
     category: "cake",
     price: "۱۸۵,۰۰۰ تومان",
     description: "ترکیبی از سه اسکوپ بستنی، خامه، شکلات و میوه.",
-    image: "/images/special.png",
+    image: "/images/special.webp",
     badge: "ویژه",
   },
 ];
