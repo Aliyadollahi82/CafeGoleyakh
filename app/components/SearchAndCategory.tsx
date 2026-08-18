@@ -20,6 +20,17 @@ export default function SearchAndCategory({
     { id: "cake", label: "دسر" },
   ];
 
+  const handleCategoryClick = (catId: string) => {
+    setActiveCategory(catId);
+    setSearchTerm("");
+
+    // اسکرول نرم به بخش محصولات
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <section className="py-[45px] pb-5 bg-white">
@@ -47,10 +58,7 @@ export default function SearchAndCategory({
                     ? "bg-primary text-white"
                     : "bg-[#eef8ff] hover:bg-primary hover:text-white"
                 }`}
-                onClick={() => {
-                  setActiveCategory(cat.id);
-                  setSearchTerm("");
-                }}
+                onClick={() => handleCategoryClick(cat.id)}
               >
                 {cat.label}
               </button>

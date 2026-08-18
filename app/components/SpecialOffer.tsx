@@ -40,7 +40,7 @@ export default function SpecialOffer({ onOrderSpecial }: SpecialOfferProps) {
           <span className="inline-block bg-[#fff3cd] text-[#b7791f] px-4 py-2 rounded-[30px] font-bold mb-5">
             ⭐ پیشنهاد ویژه امروز
           </span>
-          <h2 className="text-[42px] mb-5 max-[600px]:text-[30px]">
+          <h2 className="text-[42px] font-bold mb-5 max-[600px]:text-[30px]">
             {specialProduct.name}
           </h2>
           <p className="text-[18px] text-gray mb-[25px] leading-loose max-[900px]:text-base">

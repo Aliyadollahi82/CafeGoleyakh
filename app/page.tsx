@@ -52,12 +52,14 @@ export default function Home() {
 
       <section className="py-[80px]" id="products">
         <div className="text-center mb-[55px]">
-          <h2 className="text-[42px] mb-3 max-[600px]:text-[32px]">
+          <h2 className="text-[42px] font-bold mb-3 max-[600px]:text-[32px]">
             منوی کافه
           </h2>
           <p className="text-gray text-lg">خوشمزه‌ترین انتخاب‌ها منتظر شماست</p>
         </div>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-[30px] max-[900px]:grid-cols-1">
+
+        {/* تغییر کلاس‌های گرید جهت جلوگیری از کشیده شدن و محدود کردن به ۴ ستون */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[30px] px-8">
           {filteredProducts.map((product: Product) => (
             <ProductCard
               key={product.id}
